@@ -46,3 +46,13 @@ pstack informed the work through Model the Domain (one document and preference m
 Verified in isolated Helium on October 14, 2026. The original 26 browser checks passed again. Thirteen additional checks passed for accessible radio items, exactly one selected choice, closing after selection, focus return, persistence, dark menu colors, keyboard Home/arrow/Enter selection, Escape dismissal and focus return, outside-click dismissal, 390px viewport placement, hiding the menu during print, and following system appearance.
 
 The theme menu uses the shadcn/ui Dropdown Menu radio-item composition because these controls select a preference rather than navigate to pages. The native select was replaced with a button and themed popup.
+
+## Version 1.0.3 document favicon
+
+Verified in isolated Helium on October 14, 2026. Eleven favicon checks passed: the default URI exactly matches the extension PNG and decodes at 32px, reload leaves one icon, relative file paths resolve correctly, icon declarations remain invisible in the document, embedded custom images work, remote and executable URIs fall back to the default, processing makes no HTTP requests, HTML pages remain unchanged, and existing document icons are preserved.
+
+## Version 1.0.4 competing extension icons
+
+The initial favicon fix treated icons injected by other browser extensions as document icons. It now ignores and removes extension-scheme icons, while preserving actual document icons. A head observer restores the chosen icon if a competing extension inserts, overwrites, or removes it later.
+
+Six additional isolated-Helium checks passed: replace an existing foreign extension icon, remove a late foreign icon, restore overwritten and removed reader icons, and preserve a custom file icon both before and after foreign injection. The original 50 checks passed again.

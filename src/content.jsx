@@ -4,6 +4,7 @@ import { marked } from "marked";
 import DOMPurify from "dompurify";
 import { Button } from "./button";
 import { ThemeMenu } from "./theme-menu";
+import { setDocumentIcon } from "./favicon";
 
 const decode = (value) => {
   try {
@@ -16,8 +17,10 @@ const markdownPath = /\.(md|markdown)$/i.test(decode(location.pathname));
 const sourceNode = document.body?.querySelector(":scope > pre");
 if (location.protocol === "file:" && markdownPath && sourceNode) {
   const source = sourceNode.textContent;
+  const parsedMarkdown = marked.parse(source, { gfm: true, breaks: false });
+  setDocumentIcon(parsedMarkdown);
   const fragment = DOMPurify.sanitize(
-    marked.parse(source, { gfm: true, breaks: false }),
+    parsedMarkdown,
     {
       RETURN_DOM_FRAGMENT: true,
       FORBID_TAGS: [
