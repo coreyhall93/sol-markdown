@@ -78,8 +78,7 @@ html[data-sol-theme="dark"] #sol-markdown {
   align-items: center;
   flex-wrap: wrap;
 }
-#sol-markdown .sol-button,
-#sol-markdown select {
+#sol-markdown .sol-button {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--paper);
@@ -91,8 +90,7 @@ html[data-sol-theme="dark"] #sol-markdown {
   cursor: pointer;
   min-height: 33px;
 }
-#sol-markdown .sol-button:hover,
-#sol-markdown select:hover {
+#sol-markdown .sol-button:hover {
   background: var(--soft);
 }
 #sol-markdown :focus-visible {
@@ -350,5 +348,55 @@ html[data-sol-width="wide"] #sol-markdown main {
     --soft: #f5f5f5;
     --link: #17428a;
     color-scheme: light;
+  }
+}
+
+#sol-markdown .sol-theme-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+#sol-markdown .sol-theme-trigger[data-state="open"] {
+  background: var(--soft);
+}
+#sol-markdown .sol-theme-menu {
+  z-index: 4;
+  min-width: 170px;
+  max-width: calc(100vw - 24px);
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--fg);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  font: 400 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+#sol-markdown .sol-theme-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 10px 6px 8px;
+  border-radius: 4px;
+  color: var(--fg);
+  cursor: default;
+  user-select: none;
+  outline: none;
+}
+#sol-markdown .sol-theme-item[data-highlighted] {
+  background: var(--soft);
+}
+#sol-markdown .sol-theme-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+@media print {
+  #sol-markdown .sol-theme-menu {
+    display: none;
   }
 }

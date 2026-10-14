@@ -9,8 +9,12 @@ Sol Markdown bundles these runtime packages. Their original license files are co
 - class-variance-authority. Apache-2.0. Joe Bell.
 - clsx. MIT. Luke Edwards.
 - tailwind-merge. MIT. dcastil.
-- @radix-ui/react-slot and @radix-ui/react-compose-refs. MIT. WorkOS.
+- Radix UI React primitives, including Dropdown Menu and its supporting packages. MIT. WorkOS.
+- @floating-ui/core, @floating-ui/dom, @floating-ui/react-dom, and @floating-ui/utils. MIT. Floating UI contributors.
+- aria-hidden, get-nonce, react-remove-scroll, react-remove-scroll-bar, react-style-singleton, use-callback-ref, and use-sidecar. MIT. Their respective authors.
+- detect-node-es. MIT. Ilya Kantor.
+- tslib. 0BSD. Microsoft Corporation.
 
 The build tool esbuild is MIT licensed and is not included in the browser runtime. Its license is included alongside the dependency licenses.
 
-The adapted shadcn/ui Button is MIT licensed. See `licenses/shadcn-ui-LICENSE.md`.
+The adapted shadcn/ui Button and DropdownMenu radio-item composition are MIT licensed. See `licenses/shadcn-ui-LICENSE.md`.
