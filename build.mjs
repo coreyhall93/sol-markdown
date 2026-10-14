@@ -16,9 +16,16 @@ await writeFile(
     {
       manifest_version: 3,
       name: "Sol Markdown",
-      version: "1.0.1",
-      icons: Object.fromEntries([16, 32, 48, 128].map(size => [size, `icons/icon-${size}.png`])),
-      action: { default_title: "Sol Markdown", default_icon: Object.fromEntries([16, 32].map(size => [size, `icons/icon-${size}.png`])) },
+      version: "1.0.2",
+      icons: Object.fromEntries(
+        [16, 32, 48, 128].map((size) => [size, `icons/icon-${size}.png`]),
+      ),
+      action: {
+        default_title: "Sol Markdown",
+        default_icon: Object.fromEntries(
+          [16, 32].map((size) => [size, `icons/icon-${size}.png`]),
+        ),
+      },
       description:
         "A quiet reader for local Markdown files. No accounts or network requests.",
       permissions: ["storage"],

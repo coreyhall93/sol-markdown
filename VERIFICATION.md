@@ -40,3 +40,9 @@ An independent source review identified a legacy table-background image attribut
 The runtime JavaScript bundle is 297984 bytes. No background worker is declared.
 
 pstack informed the work through Model the Domain (one document and preference model) and Prove It Works (the real extension loaded in Helium). shadcn/ui supplies the adapted React Button. The architecture follows Markdown Viewer’s in-place local-document approach. Attribution is in README.md and the bundled license notices.
+
+## Version 1.0.2 theme menu
+
+Verified in isolated Helium on October 14, 2026. The original 26 browser checks passed again. Thirteen additional checks passed for accessible radio items, exactly one selected choice, closing after selection, focus return, persistence, dark menu colors, keyboard Home/arrow/Enter selection, Escape dismissal and focus return, outside-click dismissal, 390px viewport placement, hiding the menu during print, and following system appearance.
+
+The theme menu uses the shadcn/ui Dropdown Menu radio-item composition because these controls select a preference rather than navigate to pages. The native select was replaced with a button and themed popup.

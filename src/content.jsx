@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 import { Button } from "./button";
+import { ThemeMenu } from "./theme-menu";
 
 const decode = (value) => {
   try {
@@ -173,18 +174,10 @@ if (location.protocol === "file:" && markdownPath && sourceNode) {
             >
               {model.width === "reading" ? "Widen" : "Reading width"}
             </Button>
-            <label className="sol-theme">
-              <span className="sol-sr">Color theme</span>
-              <select
-                aria-label="Color theme"
-                value={model.theme}
-                onChange={(e) => preference("theme", e.target.value)}
-              >
-                <option value="system">System theme</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-              </select>
-            </label>
+            <ThemeMenu
+              value={model.theme}
+              onValueChange={(value) => preference("theme", value)}
+            />
             <Button onClick={() => window.print()}>Print</Button>
           </nav>
         </header>

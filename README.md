@@ -56,6 +56,6 @@ The document model contains `source`, `mode` (`rendered` or `source`), `theme` (
 
 Inspired by [simov/markdown-viewer](https://github.com/simov/markdown-viewer), especially its local-file content-script approach. This is a new implementation, not a fork of that extension. No simov implementation code is copied. Its MIT license is retained in `licenses/markdown-viewer-LICENSE` for reference.
 
-The React Button in `src/button.jsx` is adapted from [shadcn/ui](https://github.com/shadcn-ui/ui), under the MIT license in `licenses/shadcn-ui-LICENSE.md`. Its class-variance-authority variants, Radix Slot composition, and class-merging pattern are retained with local CSS classes.
+The React Button in `src/button.jsx` and theme dropdown in `src/theme-menu.jsx` are adapted from [shadcn/ui](https://github.com/shadcn-ui/ui), under the MIT license in `licenses/shadcn-ui-LICENSE.md`. The Button retains its class-variance-authority variants, Radix Slot composition, and class-merging pattern with local CSS classes. The theme menu uses Radix Dropdown Menu radio items for keyboard navigation, focus, and dismissal.
 
 Bundled dependency license files are in `licenses/dependencies`. `package-lock.json` records exact versions. `THIRD-PARTY-NOTICES.md` lists the runtime packages.
