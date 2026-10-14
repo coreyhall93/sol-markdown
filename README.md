@@ -6,6 +6,8 @@ A local Markdown reader for Helium and other Chromium browsers. Open a `.md` or 
 
 ## Install in Helium
 
+If you cloned or downloaded this repository, first follow **Build from source** below to generate the `extension` folder. Packaged downloads already include it.
+
 1. Keep this folder somewhere permanent.
 2. Open `chrome://extensions` in Helium.
 3. Enable **Developer mode**.
