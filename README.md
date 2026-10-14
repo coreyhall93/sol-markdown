@@ -29,7 +29,7 @@ Theme and width are saved locally in the browser. Source view is temporary. Refr
 
 ## Tab icon
 
-Markdown tabs use the Sol Markdown icon. An existing document icon is preserved. To give a Markdown file its own icon, add an HTML declaration on its own line:
+Markdown tabs use the Sol Markdown icon. An existing document icon is preserved. Icons supplied by another browser extension are replaced, including icons injected after rendering. To give a Markdown file its own icon, add an HTML declaration on its own line:
 
 ```html
 <link rel="icon" href="./my-icon.png">

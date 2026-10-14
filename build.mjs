@@ -17,7 +17,7 @@ await writeFile(
     {
       manifest_version: 3,
       name: "Sol Markdown",
-      version: "1.0.3",
+      version: "1.0.4",
       icons: Object.fromEntries(
         [16, 32, 48, 128].map((size) => [size, `icons/icon-${size}.png`]),
       ),
