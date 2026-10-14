@@ -8,6 +8,7 @@ await build({
   outfile: "extension/content.js",
   define: { "process.env.NODE_ENV": '"production"' },
   target: "chrome120",
+  loader: { ".png": "dataurl" },
 });
 await copyFile("src/reader.css", "extension/reader.css");
 await writeFile(
@@ -16,7 +17,7 @@ await writeFile(
     {
       manifest_version: 3,
       name: "Sol Markdown",
-      version: "1.0.2",
+      version: "1.0.3",
       icons: Object.fromEntries(
         [16, 32, 48, 128].map((size) => [size, `icons/icon-${size}.png`]),
       ),

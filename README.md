@@ -27,6 +27,16 @@ Disable other Markdown viewer extensions if both try to render the same file. Yo
 
 Theme and width are saved locally in the browser. Source view is temporary. Refresh the file after editing it to see changes.
 
+## Tab icon
+
+Markdown tabs use the Sol Markdown icon. An existing document icon is preserved. To give a Markdown file its own icon, add an HTML declaration on its own line:
+
+```html
+<link rel="icon" href="./my-icon.png">
+```
+
+The path resolves relative to the Markdown file. Local file icons and `data:image/` URLs are supported; remote icon declarations are ignored to avoid network requests. The declaration does not appear in the reading view. Refresh after changing it.
+
 ## Privacy and behavior
 
 There is no background worker, analytics, account, CDN, or remote Markdown service. The content script matches local files only and exits unless the path ends in `.md` or `.markdown` and the browser presents it as a plain text document. Chromium requires broad local file matching; the script immediately leaves other file types alone.
