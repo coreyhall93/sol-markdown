@@ -1,0 +1,354 @@
+#sol-markdown {
+  --bg: #fafafa;
+  --paper: #fff;
+  --fg: #27272a;
+  --muted: #71717a;
+  --line: #e4e4e7;
+  --soft: #f4f4f5;
+  --link: #2563eb;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  font:
+    15px/1.7 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+html:has(#sol-markdown) {
+  margin: 0;
+  scroll-padding-top: 90px;
+}
+body:has(#sol-markdown) {
+  margin: 0;
+}
+html[data-sol-theme="dark"] #sol-markdown {
+  --bg: #18181b;
+  --paper: #1f1f23;
+  --fg: #e4e4e7;
+  --muted: #a1a1aa;
+  --line: #3f3f46;
+  --soft: #27272a;
+  --link: #93b4ff;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-sol-theme="system"] #sol-markdown {
+    --bg: #18181b;
+    --paper: #1f1f23;
+    --fg: #e4e4e7;
+    --muted: #a1a1aa;
+    --line: #3f3f46;
+    --soft: #27272a;
+    --link: #93b4ff;
+    color-scheme: dark;
+  }
+}
+#sol-markdown * {
+  box-sizing: border-box;
+}
+#sol-markdown .sol-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 28px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+#sol-markdown .sol-brand {
+  font-weight: 650;
+  letter-spacing: -0.4px;
+  text-decoration: none;
+  color: var(--fg);
+  font-size: 17px;
+  white-space: nowrap;
+}
+#sol-markdown .sol-brand span {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 5px;
+}
+#sol-markdown .sol-toolbar nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#sol-markdown .sol-button,
+#sol-markdown select {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--fg);
+  font: 500 12px/1.4 inherit;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 7px 10px;
+  cursor: pointer;
+  min-height: 33px;
+}
+#sol-markdown .sol-button:hover,
+#sol-markdown select:hover {
+  background: var(--soft);
+}
+#sol-markdown :focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+#sol-markdown .sol-button[aria-pressed="true"] {
+  background: var(--soft);
+}
+#sol-markdown .sol-layout {
+  max-width: 1240px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 48px;
+  padding: 48px 32px;
+}
+#sol-markdown main {
+  min-width: 0;
+  max-width: 850px;
+  width: 100%;
+  margin: auto;
+}
+#sol-markdown .sol-outline {
+  align-self: start;
+  position: sticky;
+  top: 108px;
+  max-height: calc(100vh - 130px);
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#sol-markdown .sol-outline p {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+#sol-markdown .sol-outline a {
+  display: block;
+  color: var(--muted);
+  text-decoration: none;
+  margin: 10px 0;
+}
+#sol-markdown .sol-outline a:hover {
+  color: var(--link);
+}
+#sol-markdown .sol-prose {
+  overflow-wrap: anywhere;
+}
+#sol-markdown h1,
+#sol-markdown h2,
+#sol-markdown h3,
+#sol-markdown h4 {
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 650;
+  scroll-margin-top: 95px;
+}
+#sol-markdown h1 {
+  font-size: 36px;
+  margin: 0 0 24px;
+}
+#sol-markdown h2 {
+  font-size: 23px;
+  margin: 44px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+#sol-markdown h3 {
+  font-size: 18px;
+  margin: 30px 0 12px;
+}
+#sol-markdown p {
+  margin: 0 0 18px;
+}
+#sol-markdown a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+#sol-markdown li {
+  margin: 5px 0;
+}
+#sol-markdown ul,
+#sol-markdown ol {
+  padding-left: 24px;
+}
+#sol-markdown blockquote {
+  margin: 24px 0;
+  padding: 2px 20px;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+}
+#sol-markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+#sol-markdown code {
+  font:
+    12.5px/1.6 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  background: var(--soft);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+#sol-markdown pre {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  overflow: auto;
+}
+#sol-markdown pre code {
+  padding: 0;
+  background: none;
+}
+#sol-markdown .sol-source {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    13px/1.7 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  margin: 0;
+}
+#sol-markdown .sol-table {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 22px 0 30px;
+}
+#sol-markdown table {
+  border-collapse: collapse;
+  min-width: 100%;
+  font-size: 13px;
+  line-height: 1.6;
+}
+#sol-markdown td,
+#sol-markdown th {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  min-width: 120px;
+}
+#sol-markdown th {
+  font-weight: 600;
+  background: var(--soft);
+}
+#sol-markdown tr:last-child td {
+  border-bottom: 0;
+}
+#sol-markdown img {
+  max-width: 100%;
+  height: auto;
+}
+#sol-markdown hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+#sol-markdown footer {
+  margin-top: 56px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.7px;
+}
+#sol-markdown footer span {
+  margin: 0 8px;
+}
+#sol-markdown .sol-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+html[data-sol-width="wide"] #sol-markdown .sol-layout {
+  max-width: 1800px;
+}
+html[data-sol-width="wide"] #sol-markdown main {
+  max-width: none;
+}
+#sol-markdown .sol-layout:not(:has(aside)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (max-width: 900px) {
+  #sol-markdown .sol-layout {
+    display: block;
+    padding: 32px 24px;
+  }
+  #sol-markdown .sol-outline {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  #sol-markdown .sol-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 18px;
+  }
+  #sol-markdown .sol-layout {
+    padding: 28px 18px;
+  }
+  #sol-markdown h1 {
+    font-size: 29px;
+  }
+  #sol-markdown .sol-toolbar nav {
+    gap: 6px;
+  }
+}
+@media print {
+  #sol-markdown .sol-toolbar,
+  #sol-markdown .sol-outline,
+  #sol-markdown footer {
+    display: none;
+  }
+  #sol-markdown {
+    background: white;
+    color: black;
+  }
+  #sol-markdown .sol-layout {
+    display: block;
+    padding: 0;
+    max-width: none;
+  }
+  #sol-markdown main {
+    max-width: none;
+  }
+  #sol-markdown .sol-table {
+    overflow: visible;
+  }
+  #sol-markdown table {
+    font-size: 10px;
+  }
+  #sol-markdown td,
+  #sol-markdown th {
+    min-width: 0;
+    padding: 6px;
+  }
+}
+
+@media print {
+  html[data-sol-theme] #sol-markdown {
+    --bg: white;
+    --paper: white;
+    --fg: black;
+    --muted: #444;
+    --line: #ccc;
+    --soft: #f5f5f5;
+    --link: #17428a;
+    color-scheme: light;
+  }
+}

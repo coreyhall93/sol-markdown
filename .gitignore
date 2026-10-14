@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+
+# Local workspace handoff notes and generated browser bundle
+AGENTS.md
+CONTEXT.md
+FUTURE_COREY.md
+extension/
